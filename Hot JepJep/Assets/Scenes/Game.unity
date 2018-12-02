@@ -947,16 +947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036a90b2020d2bd4d97d2c5d32ed5ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Team1Name: 
-  Team2Name: 
-  Team3Name: 
-  Team4Name: 
-  Team5Name: 
-  Team1: {fileID: 0}
-  Team2: {fileID: 0}
-  Team3: {fileID: 0}
-  Team4: {fileID: 0}
-  Team5: {fileID: 0}
+  Team1Text: {fileID: 1186302394}
+  Team2Text: {fileID: 1399728691}
+  Team3Text: {fileID: 200772367}
+  Team4Text: {fileID: 501870929}
+  Team5Text: {fileID: 641101589}
 --- !u!4 &817533660
 Transform:
   m_ObjectHideFlags: 0
