@@ -1770,8 +1770,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bed78b545025b459f24bbc3ac18964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: 1
   TitleText: {fileID: 988138995}
   StartButton: {fileID: 1847872128}
+  Dice: {fileID: 0}
 --- !u!1 &1113060265
 GameObject:
   m_ObjectHideFlags: 0
