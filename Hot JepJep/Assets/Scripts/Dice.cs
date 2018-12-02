@@ -7,6 +7,7 @@ public class Dice : MonoBehaviour {
 	public GameObject DiceUIPanel;
 	public GameObject DiceText;
 	public int CurrentTurn = 1;
+	public Text TurnNamer;
 	public bool Active;
 	public bool Rolling;
 	public int currentRoll;
@@ -21,9 +22,24 @@ public class Dice : MonoBehaviour {
 		DiceArray = DiceStuff;
 		ShuffleArray(DiceArray);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+		if (CurrentTurn == 1){
+			TurnNamer.text = PlayerPrefs.GetString ("Team1NameSave");
+		}
+		if (CurrentTurn == 2){
+			TurnNamer.text = PlayerPrefs.GetString ("Team2NameSave");
+		}
+		if (CurrentTurn == 3){
+			TurnNamer.text = PlayerPrefs.GetString ("Team3NameSave");
+		}
+		if (CurrentTurn == 4){
+			TurnNamer.text = PlayerPrefs.GetString ("Team4NameSave");
+		}
+		if (CurrentTurn == 5){
+			TurnNamer.text = PlayerPrefs.GetString ("Team5NameSave");
+		}
 		if(Active){
 			var oldColor = DiceUIPanel.GetComponent<Image>().color;
 			float newHue;
@@ -48,7 +64,7 @@ public class Dice : MonoBehaviour {
 			arr[r] = tmp;
 		}
  	}
-	
+
 	void Roll(){
 		InvokeRepeating("showRoll",0.0f,0.125f);
 	}
