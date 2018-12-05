@@ -1431,12 +1431,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DiceUIPanel: {fileID: 163779996}
   DiceText: {fileID: 152470848}
+  CurrentTurn: 1
   Active: 1
   Rolling: 0
   currentRoll: 0
   finalRoll: 0
   iterations: 0
-  DiceStuff: f4010000f4010000fa000000fa000000fa000000fa000000fa0000006400000064000000640000006400000064000000fffffffffffffffffffffffffefffffffefffffffefffffffbfffffffbfffffffbfffffff6fffffff6fffffff6ffffffecffffffecffffffecffffff
+  DiceStuff: f4010000f4010000fa000000fa000000fa000000fa000000fa0000006400000064000000640000006400000064000000fffffffffffffffffffffffffefffffffefffffffefffffffbfffffffbfffffffbfffffff6fffffff6fffffff6ffffffecffffffecffffffecffffff00000000
 --- !u!1 &2071210717
 GameObject:
   m_ObjectHideFlags: 0
