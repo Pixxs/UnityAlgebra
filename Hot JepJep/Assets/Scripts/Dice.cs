@@ -7,7 +7,8 @@ public class Dice : MonoBehaviour {
 	public GameObject DiceUIPanel;
 	public GameObject DiceText;
 	public int CurrentTurn = 1;
-	public Text TurnNamer;
+	public GameObject CurrentTernObject;
+	public GameObject QuestionManager;
 	public bool Active;
 	public bool Rolling;
 	public int currentRoll;
@@ -25,21 +26,24 @@ public class Dice : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		//383.9 ; 108.8 265 428 586.4 746.4
 		if (CurrentTurn == 1){
-			TurnNamer.text = PlayerPrefs.GetString ("Team1NameSave");
+			CurrentTernObject.transform.position = new Vector3(108.8f,383.9f,0f);
 		}
 		if (CurrentTurn == 2){
-			TurnNamer.text = PlayerPrefs.GetString ("Team2NameSave");
+			CurrentTernObject.transform.position = new Vector3(265f,383.9f,0f);
 		}
 		if (CurrentTurn == 3){
-			TurnNamer.text = PlayerPrefs.GetString ("Team3NameSave");
+			CurrentTernObject.transform.position = new Vector3(428f,383.9f,0f);
 		}
 		if (CurrentTurn == 4){
-			TurnNamer.text = PlayerPrefs.GetString ("Team4NameSave");
+			CurrentTernObject.transform.position = new Vector3(586.4f,383.9f,0f);
 		}
 		if (CurrentTurn == 5){
-			TurnNamer.text = PlayerPrefs.GetString ("Team5NameSave");
+			CurrentTernObject.transform.position = new Vector3(746.4f,383.9f,0f);
 		}
+
+
 		if(Active){
 			var oldColor = DiceUIPanel.GetComponent<Image>().color;
 			float newHue;
@@ -101,6 +105,32 @@ public class Dice : MonoBehaviour {
 				if(iterations == 2){
 					Rolling = false;
 					Active = false;
+					Debug.Log("1");
+					Debug.Log(DiceArray[currentRoll]);
+					if(DiceArray[currentRoll] == 500){
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(500,CurrentTurn);
+					}
+					if(DiceArray[currentRoll] == -500){
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(-500,CurrentTurn);
+					}
+					if(DiceArray[currentRoll] == 250){
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(250,CurrentTurn);
+					}
+					if(DiceArray[currentRoll] == -2){
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(-250,CurrentTurn);
+					}
+					if(DiceArray[currentRoll] == -5){
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(-5,CurrentTurn);
+					}
+					if(DiceArray[currentRoll] == 100){
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(100,CurrentTurn);
+					}
+					if(DiceArray[currentRoll] == -1){
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(-150,CurrentTurn);
+					}
+					if(DiceArray[currentRoll] == 0){
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(0,CurrentTurn);
+					}
 				}
 			}
 		}
