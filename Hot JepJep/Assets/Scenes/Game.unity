@@ -2420,7 +2420,7 @@ MonoBehaviour:
   currentRoll: 0
   finalRoll: 0
   iterations: 0
-  DiceStuff: f4010000f4010000f4010000f4010000f4010000
+  DiceStuff: fa000000f4010000f4010000fa000000f4010000
 --- !u!1 &1492282079
 GameObject:
   m_ObjectHideFlags: 0
