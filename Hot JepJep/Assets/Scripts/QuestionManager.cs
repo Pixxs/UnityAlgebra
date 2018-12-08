@@ -118,12 +118,23 @@ public class QuestionManager : MonoBehaviour {
 	public void checkAnswer(){
 		if(EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<Text>().text == CorrectAnswerString){
 			showText("Correct",false);
+			if(Try == 2){
+				Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]/2);
+			}
+			else{
+				Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]);
+			}
+			Dice.GetComponent<Dice>().nextTurn();
 		}
 		else{
 			showText("Incorrect",true);
 			if(Try == 1){
 				Dice.GetComponent<Dice>().nextStealTurn();
 				Try += 1;
+			}
+			else{
+				Try = 1;
+				Dice.GetComponent<Dice>().nextTurn();
 			}
 		}
 	}
