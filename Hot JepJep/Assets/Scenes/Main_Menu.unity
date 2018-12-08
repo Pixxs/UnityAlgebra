@@ -158,11 +158,11 @@ MonoBehaviour:
   Team3Name: 
   Team4Name: 
   Team5Name: 
-  Team1: {fileID: 546453836}
-  Team2: {fileID: 539988068}
-  Team3: {fileID: 1436710334}
-  Team4: {fileID: 1459745525}
-  Team5: {fileID: 385898612}
+  Team1: {fileID: 706802694}
+  Team2: {fileID: 268433688}
+  Team3: {fileID: 1893462830}
+  Team4: {fileID: 829171982}
+  Team5: {fileID: 745085055}
 --- !u!1 &62427088
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,14 +824,14 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d8fb9d78d0fb8df4e8240a429452f76d, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 8
+    m_MaxSize: 18
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
 --- !u!222 &546453837

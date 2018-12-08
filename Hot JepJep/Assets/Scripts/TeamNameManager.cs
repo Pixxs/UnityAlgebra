@@ -11,11 +11,11 @@ public class TeamNameManager : MonoBehaviour {
 	public string Team3Name;
 	public string Team4Name;
 	public string Team5Name;
-	public Text Team1;
-	public Text Team2;
-	public Text Team3;
-	public Text Team4;
-	public Text Team5;
+	public GameObject Team1;
+	public GameObject Team2;
+	public GameObject Team3;
+	public GameObject Team4;
+	public GameObject Team5;
 
 	// Use this for initialization
 	void Start () {
@@ -24,11 +24,11 @@ public class TeamNameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Team1Name = Team1.text;
-		Team2Name = Team2.text;
-		Team3Name = Team3.text;
-		Team4Name = Team4.text;
-		Team5Name = Team5.text;
+		Team1Name = Team1.GetComponent<InputField>().text;
+		Team2Name = Team2.GetComponent<InputField>().text;
+		Team3Name = Team3.GetComponent<InputField>().text;
+		Team4Name = Team4.GetComponent<InputField>().text;
+		Team5Name = Team5.GetComponent<InputField>().text;
 	
 		PlayerPrefs.SetString ("Team1NameSave", Team1Name);
 		PlayerPrefs.SetString ("Team2NameSave", Team2Name);
