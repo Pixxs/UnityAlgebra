@@ -7,8 +7,10 @@ public class Dice : MonoBehaviour {
 	public GameObject DiceUIPanel;
 	public GameObject DiceText;
 	public int CurrentTurn = 1;
+	public GameObject Scoreboard;
 	public GameObject CurrentTernObject;
 	public GameObject QuestionManager;
+	public GameObject QuestionPanel;
 	public bool Active;
 	public bool Rolling;
 	public int currentRoll;
@@ -45,6 +47,8 @@ public class Dice : MonoBehaviour {
 
 
 		if(Active){
+			QuestionPanel.SetActive(false);
+			DiceText.transform.GetChild(0).gameObject.SetActive(true);
 			var oldColor = DiceUIPanel.GetComponent<Image>().color;
 			float newHue;
 			float newJunk;
@@ -58,6 +62,10 @@ public class Dice : MonoBehaviour {
 				Roll();
 				Rolling = true;
 			}
+		}
+		else if(QuestionManager.GetComponent<QuestionManager>().Active){
+			QuestionPanel.SetActive(true);
+			DiceText.transform.GetChild(0).gameObject.SetActive(false);
 		}
 	}
 	public static void ShuffleArray<T>(T[] arr) {
@@ -108,31 +116,59 @@ public class Dice : MonoBehaviour {
 					Debug.Log("1");
 					Debug.Log(DiceArray[currentRoll]);
 					if(DiceArray[currentRoll] == 500){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(500,CurrentTurn);
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(500);
 					}
 					if(DiceArray[currentRoll] == -500){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(-500,CurrentTurn);
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(-500);
 					}
 					if(DiceArray[currentRoll] == 250){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(250,CurrentTurn);
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(250);
 					}
 					if(DiceArray[currentRoll] == -2){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(-250,CurrentTurn);
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(-250);
 					}
 					if(DiceArray[currentRoll] == -5){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(-5,CurrentTurn);
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(-5);
 					}
 					if(DiceArray[currentRoll] == 100){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(100,CurrentTurn);
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(100);
 					}
 					if(DiceArray[currentRoll] == -1){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(-150,CurrentTurn);
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(-150);
 					}
 					if(DiceArray[currentRoll] == 0){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(0,CurrentTurn);
+						QuestionManager.GetComponent<QuestionManager>().showQuestion(0);
+					}
+					if(DiceArray[currentRoll] == -10){
+						QuestionManager.GetComponent<QuestionManager>().showText("Lose 150 points",true);
+						Scoreboard.GetComponent<Scoreboard>().Scores[CurrentTurn-1] -= 150;
+						nextTurn();
+					}
+					if(DiceArray[currentRoll] == -20){
+						QuestionManager.GetComponent<QuestionManager>().showText("Lose 250 points",true);
+						Scoreboard.GetComponent<Scoreboard>().Scores[CurrentTurn-1] -= 250;
+						nextTurn();
 					}
 				}
 			}
+		}
+	}
+	public void nextTurn(){
+		if(CurrentTurn == 5){
+			CurrentTurn = 1;
+		}
+		else{
+			CurrentTurn += 1;
+		}
+		Active = true;
+		QuestionPanel.SetActive(false);
+	}
+	public void nextStealTurn(){
+		if(CurrentTurn == 5){
+			CurrentTurn = 1;
+		}
+		else{
+			CurrentTurn += 1;
 		}
 	}
 }

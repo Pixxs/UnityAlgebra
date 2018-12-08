@@ -17,19 +17,19 @@ public class DiceAnimation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//Debug.Log(DiceText.transform.position);
 	}
 	IEnumerator animateDice()
 	{
 		while(true){
 			if((Pressed || Dice.GetComponent<Dice>().Active == false) &&  Dice.GetComponent<Dice>().Rolling == false){
 				GetComponent<Image>().sprite = DefaultImage;
-				DiceText.transform.position = new Vector3(426.5f,63.5f,0.0f);
+				DiceText.transform.position = new Vector3(426.5f,47.5f,0.0f);
 				Pressed = false;
 			}
 			else{
 				GetComponent<Image>().sprite = PressedImage;
-				DiceText.transform.position = new Vector3(426.5f,55.5f,0.0f);
+				DiceText.transform.position = new Vector3(426.5f,39.5f,0.0f);
 				Pressed = true;
 			}
 			yield return new WaitForSeconds(0.5f);
