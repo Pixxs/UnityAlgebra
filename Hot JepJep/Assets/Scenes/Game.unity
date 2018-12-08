@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 163779997}
   - component: {fileID: 163780000}
   - component: {fileID: 163779999}
+  - component: {fileID: 163779998}
   m_Layer: 5
   m_Name: Dice
   m_TagString: Untagged
@@ -251,6 +252,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -172.00002}
   m_SizeDelta: {x: 700, y: 350.17587}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &163779998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 163779996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d5ef03702f64548b1e1c168475e1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PressedImage: {fileID: 21300000, guid: a04adfbc11a6a8f4aa9c5f60569db7ec, type: 3}
+  DefaultImage: {fileID: 21300000, guid: 18c4629e7e1eb2b4d8a33ef07ee6f858, type: 3}
+  Pressed: 0
+  DiceText: {fileID: 152470848}
+  Dice: {fileID: 1491892127}
 --- !u!114 &163779999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,7 +935,7 @@ GameObject:
   - component: {fileID: 585974953}
   - component: {fileID: 585974952}
   m_Layer: 5
-  m_Name: Answer Choice
+  m_Name: Answer Choice 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1712,7 +1729,7 @@ GameObject:
   - component: {fileID: 1326693074}
   - component: {fileID: 1326693073}
   m_Layer: 5
-  m_Name: Answer Choice
+  m_Name: Answer Choice 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1823,7 +1840,7 @@ GameObject:
   - component: {fileID: 1369047091}
   - component: {fileID: 1369047090}
   m_Layer: 5
-  m_Name: Answer Choice
+  m_Name: Answer Choice 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2140,7 +2157,7 @@ GameObject:
   - component: {fileID: 1492282082}
   - component: {fileID: 1492282081}
   m_Layer: 5
-  m_Name: Answer Choice
+  m_Name: Answer Choice 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2295,99 +2312,122 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestionText: {fileID: 1872608863}
+  AnswerChoices:
+  - {fileID: 1326693071}
+  - {fileID: 1492282079}
+  - {fileID: 1369047088}
+  - {fileID: 585974950}
   EasyQuestionList:
   - QuestionText: easy q1
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - something
+    - another thing
+    - beep
     AnswerChoicesImages: []
   - QuestionText: easy q2
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - erfre
+    - erfref
+    - erferfffff
     AnswerChoicesImages: []
   - QuestionText: easy q3
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
-    AnswerChoicesImages: []
-  - QuestionText: easy q4
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
-    AnswerChoicesImages: []
-  - QuestionText: easy q5
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - nwef
+    - huh
+    - yeuh
     AnswerChoicesImages: []
   MediumQuestionList:
   - QuestionText: medium q1
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - fuck
+    - ass
+    - bitch
     AnswerChoicesImages: []
   - QuestionText: medium 2
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - what
+    - something
+    - todo
     AnswerChoicesImages: []
   - QuestionText: medium 3
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
-    AnswerChoicesImages: []
-  - QuestionText: medium 4
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
-    AnswerChoicesImages: []
-  - QuestionText: medium 5
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - huhiuh
+    - kep
+    - kaappa
     AnswerChoicesImages: []
   HardQuestionList:
   - QuestionText: hard 1
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - 1
+    - 2
+    - 3
     AnswerChoicesImages: []
   - QuestionText: hard 2
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - yuhhhhouhouhouh
+    - 'some thingkwe '
+    - i am bad
     AnswerChoicesImages: []
   - QuestionText: hard 3
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
-    AnswerChoicesImages: []
-  - QuestionText: hard 4
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
-    AnswerChoicesImages: []
-  - QuestionText: hard 5
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: orrect
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - pg placeholder
+    - iuyiu
+    - keyboard
     AnswerChoicesImages: []
   UltimateQuestionList:
   - QuestionText: ult 1
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - burp
+    - wallet
+    - watch
     AnswerChoicesImages: []
   - QuestionText: ult 2
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - happy birthday
+    - brock
+    - josh
     AnswerChoicesImages: []
   - QuestionText: ult 3
     QuestionImage: {fileID: 0}
-    CorrectAnswer: 
-    AnswerChoices: []
+    CorrectAnswer: correct
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - alg
+    - eng
+    - acct
     AnswerChoicesImages: []
 --- !u!4 &1739821218
 Transform:

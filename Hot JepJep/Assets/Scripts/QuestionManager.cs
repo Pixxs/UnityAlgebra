@@ -7,6 +7,7 @@ public class QuestionManager : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject QuestionText;
+	public GameObject[] AnswerChoices;
 	public Question[] EasyQuestionList;
 	public Question[] MediumQuestionList;
 	public Question[] HardQuestionList;
@@ -26,30 +27,64 @@ public class QuestionManager : MonoBehaviour {
 	}
 
 	public void showQuestion(int point, int team){
-		Debug.Log("Fixed");
+		//Debug.Log("Fixed");
 		if(point == 500){
-			QuestionText.GetComponent<Text>().text = HardQuestionList[Random.Range(0,EasyQuestionList.Length)].QuestionText;
+			int QuestionNumber = Random.Range(0,HardQuestionList.Length);
+			QuestionText.GetComponent<Text>().text = HardQuestionList[QuestionNumber].QuestionText;
+			showAnswerChoices(HardQuestionList[QuestionNumber]);
 		}
 		if(point == -500){
-			QuestionText.GetComponent<Text>().text = HardQuestionList[Random.Range(0,EasyQuestionList.Length)].QuestionText;
+			int QuestionNumber = Random.Range(0,EasyQuestionList.Length);
+			QuestionText.GetComponent<Text>().text = HardQuestionList[QuestionNumber].QuestionText;
+			showAnswerChoices(HardQuestionList[QuestionNumber]);
 		}
 		if(point == 250){
-			QuestionText.GetComponent<Text>().text = MediumQuestionList[Random.Range(0,MediumQuestionList.Length)].QuestionText;
+			int QuestionNumber = Random.Range(0,MediumQuestionList.Length);
+			QuestionText.GetComponent<Text>().text = MediumQuestionList[QuestionNumber].QuestionText;
+			showAnswerChoices(MediumQuestionList[QuestionNumber]);
 		}
 		if(point == -250){
-			QuestionText.GetComponent<Text>().text = MediumQuestionList[Random.Range(0,MediumQuestionList.Length)].QuestionText;
+			int QuestionNumber = Random.Range(0,MediumQuestionList.Length);
+			QuestionText.GetComponent<Text>().text = MediumQuestionList[QuestionNumber].QuestionText;
+			showAnswerChoices(MediumQuestionList[QuestionNumber]);
 		}
 		if(point == -5){
-			QuestionText.GetComponent<Text>().text = MediumQuestionList[Random.Range(0,MediumQuestionList.Length)].QuestionText;
+			int QuestionNumber = Random.Range(0,MediumQuestionList.Length);
+			QuestionText.GetComponent<Text>().text = MediumQuestionList[QuestionNumber].QuestionText;
+			showAnswerChoices(MediumQuestionList[QuestionNumber]);
 		}
 		if(point == 100){
-			QuestionText.GetComponent<Text>().text = EasyQuestionList[Random.Range(0,EasyQuestionList.Length)].QuestionText;
+			int QuestionNumber = Random.Range(0,EasyQuestionList.Length);
+			QuestionText.GetComponent<Text>().text = EasyQuestionList[QuestionNumber].QuestionText;
+			showAnswerChoices(EasyQuestionList[QuestionNumber]);
 		}
 		if(point == -150){
-			QuestionText.GetComponent<Text>().text = EasyQuestionList[Random.Range(0,EasyQuestionList.Length)].QuestionText;
+			int QuestionNumber = Random.Range(0,EasyQuestionList.Length);
+			QuestionText.GetComponent<Text>().text = EasyQuestionList[QuestionNumber].QuestionText;
+			showAnswerChoices(EasyQuestionList[QuestionNumber]);
 		}
 		if(point == 0){
-			QuestionText.GetComponent<Text>().text = UltimateQuestionList[Random.Range(0,UltimateQuestionList.Length)].QuestionText;
+			int QuestionNumber = Random.Range(0,UltimateQuestionList.Length);
+			QuestionText.GetComponent<Text>().text = UltimateQuestionList[QuestionNumber].QuestionText;
+			showAnswerChoices(UltimateQuestionList[QuestionNumber]);
 		}
+	}
+	public static void ShuffleArray<T>(T[] arr) {
+		for (int i = arr.Length - 1; i > 0; i--) {
+			int r = Random.Range(0, i);
+			T tmp = arr[i];
+			arr[i] = arr[r];
+			arr[r] = tmp;
+		}
+ 	}
+	
+	public void showAnswerChoices(Question currentQuestion){
+		ShuffleArray(AnswerChoices);
+		//Debug.Log(AnswerChoices.Length);
+		// Debug.Log(currentQuestion.AnswerChoices.Length);
+		for(int i=0;i<currentQuestion.AnswerChoices.Length;i++){
+			AnswerChoices[i].transform.GetChild(0).GetComponent<Text>().text = currentQuestion.AnswerChoices[i];
+		}
+		AnswerChoices[3].transform.GetChild(0).GetComponent<Text>().text = currentQuestion.CorrectAnswer;
 	}
 }
