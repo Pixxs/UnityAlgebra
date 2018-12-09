@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class QuestionManager : MonoBehaviour {
-	
+
 
 	// Use this for initialization
 	public bool Active;
 	public int Try;
+	public GameObject CorrectSound;
+	public GameObject WrongSound;
 	public GameObject Dice;
 	public GameObject Scoreboard;
 	public GameObject QuestionText;
@@ -25,12 +27,12 @@ public class QuestionManager : MonoBehaviour {
 	Question[] HardQuestionListUsed;
 	Question[] UltimateQuestionListUsed;
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	public void showQuestion(int point){
@@ -86,8 +88,10 @@ public class QuestionManager : MonoBehaviour {
 			arr[r] = tmp;
 		}
  	}
-	
+
 	public void showAnswerChoices(Question currentQuestion){
+		CorrectSound.SetActive(false);
+		WrongSound.SetActive(false);
 		ShuffleArray(AnswerChoices);
 		CorrectAnswerString = currentQuestion.CorrectAnswer;
 		//Debug.Log(AnswerChoices.Length);
@@ -119,9 +123,11 @@ public class QuestionManager : MonoBehaviour {
 		if(EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<Text>().text == CorrectAnswerString){
 			showText("Correct",false);
 			if(Try == 2){
+				CorrectSound.SetActive(true);
 				Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]/2);
 			}
 			else{
+				CorrectSound.SetActive(true);
 				Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]);
 			}
 			Dice.GetComponent<Dice>().nextTurn();
@@ -129,10 +135,12 @@ public class QuestionManager : MonoBehaviour {
 		else{
 			showText("Incorrect",true);
 			if(Try == 1){
+				WrongSound.SetActive(true);
 				Dice.GetComponent<Dice>().nextStealTurn();
 				Try += 1;
 			}
 			else{
+				WrongSound.SetActive(true);
 				Try = 1;
 				Dice.GetComponent<Dice>().nextTurn();
 			}
