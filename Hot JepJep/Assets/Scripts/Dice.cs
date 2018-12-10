@@ -89,10 +89,10 @@ public class Dice : MonoBehaviour {
 				currentRoll = currentRoll + 1;
 			}
 
-			if(DiceArray[currentRoll] == -1){
+			if(DiceArray[currentRoll] == -150){
 				DiceText.GetComponent<Text>().text = "Steal 150";
 			}
-			else if(DiceArray[currentRoll] == -2){
+			else if(DiceArray[currentRoll] == -250){
 				DiceText.GetComponent<Text>().text = "Steal 250";
 			}
 			else if(DiceArray[currentRoll] == -5){

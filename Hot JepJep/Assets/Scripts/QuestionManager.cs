@@ -14,6 +14,7 @@ public class QuestionManager : MonoBehaviour {
 	public GameObject Dice;
 	public GameObject Scoreboard;
 	public GameObject QuestionText;
+	public GameObject QuestionImage;
 	public GameObject StatusText;
 	public GameObject StealMenu;
 	public GameObject StealSlider;
@@ -42,41 +43,77 @@ public class QuestionManager : MonoBehaviour {
 	public void showQuestion(int point){
 		Active = true;
 		Try = 1;
+		QuestionImage.SetActive(false);
 		//Debug.Log("Fixed");
 		if(point == 500){
 			int QuestionNumber = Random.Range(0,HardQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = HardQuestionList[QuestionNumber].QuestionText;
+			if(HardQuestionList[QuestionNumber].QuestionImage != null){
+				QuestionImage.GetComponent<Image>().sprite = HardQuestionList[QuestionNumber].QuestionImage;
+				QuestionText.GetComponent<Text>().text = "";
+				QuestionImage.SetActive(true);
+			}
 			showAnswerChoices(HardQuestionList[QuestionNumber]);
 		}
 		if(point == 250){
 			int QuestionNumber = Random.Range(0,MediumQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = MediumQuestionList[QuestionNumber].QuestionText;
+			if(MediumQuestionList[QuestionNumber].QuestionImage != null){
+				QuestionImage.GetComponent<Image>().sprite = MediumQuestionList[QuestionNumber].QuestionImage;
+				QuestionText.GetComponent<Text>().text = "";
+				QuestionImage.SetActive(true);
+			}
 			showAnswerChoices(MediumQuestionList[QuestionNumber]);
 		}
 		if(point == -250){
 			Debug.Log("h");
 			int QuestionNumber = Random.Range(0,MediumQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = MediumQuestionList[QuestionNumber].QuestionText;
+			if(MediumQuestionList[QuestionNumber].QuestionImage != null){
+				QuestionImage.GetComponent<Image>().sprite = MediumQuestionList[QuestionNumber].QuestionImage;
+				QuestionText.GetComponent<Text>().text = "";
+				QuestionImage.SetActive(true);
+			}
 			showAnswerChoices(MediumQuestionList[QuestionNumber]);
 		}
 		if(point == -5){
 			int QuestionNumber = Random.Range(0,MediumQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = MediumQuestionList[QuestionNumber].QuestionText;
+			if(MediumQuestionList[QuestionNumber].QuestionImage != null){
+				QuestionImage.GetComponent<Image>().sprite = MediumQuestionList[QuestionNumber].QuestionImage;
+				QuestionText.GetComponent<Text>().text = "";
+				QuestionImage.SetActive(true);
+			}
 			showAnswerChoices(MediumQuestionList[QuestionNumber]);
 		}
 		if(point == 100){
 			int QuestionNumber = Random.Range(0,EasyQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = EasyQuestionList[QuestionNumber].QuestionText;
+			if(EasyQuestionList[QuestionNumber].QuestionImage != null){
+				QuestionImage.GetComponent<Image>().sprite = EasyQuestionList[QuestionNumber].QuestionImage;
+				QuestionText.GetComponent<Text>().text = "";
+				QuestionImage.SetActive(true);
+			}
 			showAnswerChoices(EasyQuestionList[QuestionNumber]);
 		}
 		if(point == -150){
 			int QuestionNumber = Random.Range(0,EasyQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = EasyQuestionList[QuestionNumber].QuestionText;
+			if(EasyQuestionList[QuestionNumber].QuestionImage != null){
+				QuestionImage.GetComponent<Image>().sprite = EasyQuestionList[QuestionNumber].QuestionImage;
+				QuestionText.GetComponent<Text>().text = "";
+				QuestionImage.SetActive(true);
+			}
 			showAnswerChoices(EasyQuestionList[QuestionNumber]);
 		}
 		if(point == 0){
 			int QuestionNumber = Random.Range(0,UltimateQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = UltimateQuestionList[QuestionNumber].QuestionText;
+			if(UltimateQuestionList[QuestionNumber].QuestionImage != null){
+				QuestionImage.GetComponent<Image>().sprite = UltimateQuestionList[QuestionNumber].QuestionImage;
+				QuestionText.GetComponent<Text>().text = "";
+				QuestionImage.SetActive(true);
+			}
 			showAnswerChoices(UltimateQuestionList[QuestionNumber]);
 		}
 	}

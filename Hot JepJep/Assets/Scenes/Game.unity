@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6391914f24eccc74c835590785665f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scores: f401000000000000c80000000000000000000000
+  Scores: 0000000000000000000000000000000000000000
   Score1TextObject: {fileID: 310411534}
   Score2TextObject: {fileID: 554917604}
   Score3TextObject: {fileID: 894540499}
@@ -2816,6 +2816,7 @@ RectTransform:
   - {fileID: 1492282080}
   - {fileID: 1369047089}
   - {fileID: 585974951}
+  - {fileID: 1935631068}
   m_Father: {fileID: 488078223}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3804,7 +3805,7 @@ MonoBehaviour:
   currentRoll: 0
   finalRoll: 0
   iterations: 0
-  DiceStuff: 06ffffff06ffffff
+  DiceStuff: 640000006400000064000000640000006affffff6affffff6affffff6afffffffa000000fa000000fa000000fa00000006ffffff06ffffff06ffffff06fffffff4010000f4010000f4010000fbfffffffbfffffffbfffffffbffffff00000000f6fffffff6fffffff6ffffffecffffffecffffffecffffff
 --- !u!1 &1492282079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4584,6 +4585,7 @@ MonoBehaviour:
   Dice: {fileID: 1491892127}
   Scoreboard: {fileID: 589047254}
   QuestionText: {fileID: 1872608863}
+  QuestionImage: {fileID: 1935631065}
   StatusText: {fileID: 493783148}
   StealMenu: {fileID: 915877928}
   StealSlider: {fileID: 1780888277}
@@ -4595,116 +4597,125 @@ MonoBehaviour:
   - {fileID: 1369047088}
   - {fileID: 585974950}
   EasyQuestionList:
-  - QuestionText: easy q1
+  - QuestionText: What is the "h" value in vertex form?
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: The "x" coordinate of the vertex
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - something
-    - another thing
-    - beep
+    - The "y" coordinate of the vertex
+    - The "z" coordinate of the vertex
+    - The compression/stretch factor
     AnswerChoicesImages: []
-  - QuestionText: easy q2
+  - QuestionText: What is the "k" value in vertex form?
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: The "y" coordinate of the verte
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - erfre
-    - erfref
-    - erferfffff
+    - The "x" coordinate of the vertex
+    - The compression/stretch factor
+    - The "z" coordinate of the vertex
     AnswerChoicesImages: []
-  - QuestionText: easy q3
+  - QuestionText: What is the formula for vertex form of a quadratic?
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: "y=a(x-h)\xB2+k"
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - nwef
-    - huh
-    - yeuh
+    - "y=ax\xB2+bx+c"
+    - y=a|x-h|+k
+    - ax+by=c
+    AnswerChoicesImages: []
+  - QuestionText: What is the formula for standard form of a quadratic?
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: "y=ax\xB2+bx+c"
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - "y=a(x-h)\xB2+k"
+    - y=a|x-h|+k
+    - ax+by=c
+    AnswerChoicesImages: []
+  - QuestionText: Is this table linear or quadratic?
+    QuestionImage: {fileID: 21300000, guid: df1829d3e03d66440a0d013ff004e4b5, type: 3}
+    CorrectAnswer: Quadratic
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - Linear
+    - None of the above
+    - Not a function
+    AnswerChoicesImages: []
+  - QuestionText: Is this table linear or quadratic 2?
+    QuestionImage: {fileID: 21300000, guid: e4403dd3977c8484099b332cdc8aae0e, type: 3}
+    CorrectAnswer: Linear
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - Quadratic
+    - None of the above
+    - Not a function
     AnswerChoicesImages: []
   MediumQuestionList:
-  - QuestionText: medium q1
+  - QuestionText: "Change y=x\xB2+2x+1 to vertex form"
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: "y=(x+1)\xB2"
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - fuck
-    - ass
-    - bitch
+    - "y=(x-1)\xB2"
+    - "y=x\xB2+1"
+    - "y=x\xB2-1"
     AnswerChoicesImages: []
-  - QuestionText: medium 2
+  - QuestionText: "Change y=(x-3)\xB2-2 to standard form"
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: "y=x\xB2-6x+7"
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - what
-    - something
-    - todo
+    - "y=x\xB2-3x-2"
+    - "y=x\xB2-9x+7"
+    - "y=x\xB2-6x+9"
     AnswerChoicesImages: []
-  - QuestionText: medium 3
+  - QuestionText: "Change y=(x-7)\xB2+15 to standard form"
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: "y=x\xB2-14x+64"
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - huhiuh
-    - kep
-    - kaappa
+    - "y=x\xB2-7x+64"
+    - "y=x\xB2-14x+49"
+    - "y=x\xB2-7x+49"
+    AnswerChoicesImages: []
+  - QuestionText: "Change y=x\xB2-16x-70 to vertex form"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: "y=(x-8)\xB2-134"
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - "y=(x+16)\xB2-134"
+    - "y=(x-8)\xB2+64"
+    - "y=(x-16)\xB2-64"
     AnswerChoicesImages: []
   HardQuestionList:
-  - QuestionText: hard 1
+  - QuestionText: "Change y=2x\xB2-24x+59 to vertex form"
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: "y=2(x-6)\xB2-13"
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - 1
-    - 2
-    - 3
+    - "y=2(x-12)\xB2-13"
+    - "y=(2x-6)\xB2-13"
+    - "y=2(x+6)\xB2+36"
     AnswerChoicesImages: []
-  - QuestionText: hard 2
+  - QuestionText: "Change y=3(x-5)\xB2+21 to standard form"
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: "y=3x\xB2-30x+96"
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - yuhhhhouhouhouh
-    - 'some thingkwe '
-    - i am bad
-    AnswerChoicesImages: []
-  - QuestionText: hard 3
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: orrect
-    CorrectAnswerImage: {fileID: 0}
-    AnswerChoices:
-    - pg placeholder
-    - iuyiu
-    - keyboard
+    - "y=3x\xB2+30x+96"
+    - "y=3x\xB2-30x+25"
+    - "y=3x\xB2-25x-63"
     AnswerChoicesImages: []
   UltimateQuestionList:
-  - QuestionText: ult 1
+  - QuestionText: "Change y=-\u2153x\xB2+18x-17 to vertex form"
     QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
+    CorrectAnswer: "y=-\u2153(x-9)\xB2+64"
     CorrectAnswerImage: {fileID: 0}
     AnswerChoices:
-    - burp
-    - wallet
-    - watch
-    AnswerChoicesImages: []
-  - QuestionText: ult 2
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
-    CorrectAnswerImage: {fileID: 0}
-    AnswerChoices:
-    - happy birthday
-    - brock
-    - josh
-    AnswerChoicesImages: []
-  - QuestionText: ult 3
-    QuestionImage: {fileID: 0}
-    CorrectAnswer: correct
-    CorrectAnswerImage: {fileID: 0}
-    AnswerChoices:
-    - alg
-    - eng
-    - acct
+    - "y=-\u2153(x+6)\xB2+36"
+    - "y=-\u2153(x-6)\xB2+64"
+    - "y=-\u2153(x+9)\xB2-36"
     AnswerChoicesImages: []
   CorrectAnswerString: 
 --- !u!4 &1739821218
@@ -4894,6 +4905,74 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1935631065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1935631068}
+  - component: {fileID: 1935631067}
+  - component: {fileID: 1935631066}
+  m_Layer: 5
+  m_Name: QuestionImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1935631066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935631065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1935631067
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935631065}
+--- !u!224 &1935631068
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935631065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1091253996}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 44.6}
+  m_SizeDelta: {x: 500, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1950667964
 GameObject:
   m_ObjectHideFlags: 0
