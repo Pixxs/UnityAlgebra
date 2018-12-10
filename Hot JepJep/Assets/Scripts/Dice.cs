@@ -162,6 +162,7 @@ public class Dice : MonoBehaviour {
 		QuestionPanel.SetActive(false);
 	}
 	public void hideQuestionPanel(){
+		Debug.Log("nnn");
 		QuestionPanel.SetActive(false);
 	}
 	public void nextStealTurn(){

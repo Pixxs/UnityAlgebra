@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6391914f24eccc74c835590785665f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scores: 0000000000000000000000000000000000000000
+  Scores: f401000000000000c80000000000000000000000
   Score1TextObject: {fileID: 310411534}
   Score2TextObject: {fileID: 554917604}
   Score3TextObject: {fileID: 894540499}
@@ -3804,7 +3804,7 @@ MonoBehaviour:
   currentRoll: 0
   finalRoll: 0
   iterations: 0
-  DiceStuff: 6affffff6afffffff4010000
+  DiceStuff: 06ffffff06ffffff
 --- !u!1 &1492282079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4587,6 +4587,8 @@ MonoBehaviour:
   StatusText: {fileID: 493783148}
   StealMenu: {fileID: 915877928}
   StealSlider: {fileID: 1780888277}
+  SwapMenu: {fileID: 1682997796}
+  SwapSlider: {fileID: 2025161985}
   AnswerChoices:
   - {fileID: 1326693071}
   - {fileID: 1492282079}
@@ -5075,7 +5077,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1972812588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1739821217}
+        m_MethodName: swapPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1972812588

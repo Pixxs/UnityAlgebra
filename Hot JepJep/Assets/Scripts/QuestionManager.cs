@@ -17,6 +17,8 @@ public class QuestionManager : MonoBehaviour {
 	public GameObject StatusText;
 	public GameObject StealMenu;
 	public GameObject StealSlider;
+	public GameObject SwapMenu;
+	public GameObject SwapSlider;
 	public GameObject[] AnswerChoices;
 	public Question[] EasyQuestionList;
 	public Question[] MediumQuestionList;
@@ -128,6 +130,18 @@ public class QuestionManager : MonoBehaviour {
 					Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]/2);
 					Dice.GetComponent<Dice>().nextTurn();
 				}
+				else if(Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll] == 0){
+					for(int i = 0;i<Scoreboard.GetComponent<Scoreboard>().Scores.Length;i++){
+						if(i != Dice.GetComponent<Dice>().CurrentTurn-1 && Scoreboard.GetComponent<Scoreboard>().Scores[i] > 0){
+							Scoreboard.GetComponent<Scoreboard>().Scores[i] = 0;
+							Dice.GetComponent<Dice>().nextTurn();
+						}
+					}
+				}
+				else if(Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll] == -5){
+					Dice.GetComponent<Dice>().hideQuestionPanel();
+					SwapMenu.SetActive(true);
+				}
 				else{
 					Dice.GetComponent<Dice>().hideQuestionPanel();
 					StealMenu.SetActive(true);
@@ -138,6 +152,18 @@ public class QuestionManager : MonoBehaviour {
 				if(Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]>0){
 					Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]);
 					Dice.GetComponent<Dice>().nextTurn();
+				}
+				else if(Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll] == 0){
+					for(int i = 0;i<Scoreboard.GetComponent<Scoreboard>().Scores.Length;i++){
+						if(i != Dice.GetComponent<Dice>().CurrentTurn-1 && Scoreboard.GetComponent<Scoreboard>().Scores[i] > 0){
+							Scoreboard.GetComponent<Scoreboard>().Scores[i] = 0;
+							Dice.GetComponent<Dice>().nextTurn();
+						}
+					}
+				}
+				else if(Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll] == -5){
+					Dice.GetComponent<Dice>().hideQuestionPanel();
+					SwapMenu.SetActive(true);
 				}
 				else{
 					Dice.GetComponent<Dice>().hideQuestionPanel();
@@ -173,5 +199,19 @@ public class QuestionManager : MonoBehaviour {
 			Dice.GetComponent<Dice>().nextTurn();
 			StealMenu.SetActive(false);
 		}
+	}
+
+	public void swapPoints(){
+		Debug.Log(Dice.GetComponent<Dice>().CurrentTurn-1);
+		Debug.Log((int)StealSlider.GetComponent<Slider>().value-1);
+		int oldCurrentScore;
+		int oldOtherScore;
+		oldCurrentScore = Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1];
+		oldOtherScore = Scoreboard.GetComponent<Scoreboard>().Scores[(int)SwapSlider.GetComponent<Slider>().value-1];
+
+		Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] = oldOtherScore;
+		Scoreboard.GetComponent<Scoreboard>().Scores[(int)SwapSlider.GetComponent<Slider>().value-1] = oldCurrentScore;
+		Dice.GetComponent<Dice>().nextTurn();
+		SwapMenu.SetActive(false);
 	}
 }
