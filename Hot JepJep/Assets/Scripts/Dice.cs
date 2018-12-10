@@ -118,13 +118,10 @@ public class Dice : MonoBehaviour {
 					if(DiceArray[currentRoll] == 500){
 						QuestionManager.GetComponent<QuestionManager>().showQuestion(500);
 					}
-					if(DiceArray[currentRoll] == -500){
-						QuestionManager.GetComponent<QuestionManager>().showQuestion(-500);
-					}
 					if(DiceArray[currentRoll] == 250){
 						QuestionManager.GetComponent<QuestionManager>().showQuestion(250);
 					}
-					if(DiceArray[currentRoll] == -2){
+					if(DiceArray[currentRoll] == -250){
 						QuestionManager.GetComponent<QuestionManager>().showQuestion(-250);
 					}
 					if(DiceArray[currentRoll] == -5){
@@ -133,10 +130,11 @@ public class Dice : MonoBehaviour {
 					if(DiceArray[currentRoll] == 100){
 						QuestionManager.GetComponent<QuestionManager>().showQuestion(100);
 					}
-					if(DiceArray[currentRoll] == -1){
+					if(DiceArray[currentRoll] == -150){
 						QuestionManager.GetComponent<QuestionManager>().showQuestion(-150);
 					}
 					if(DiceArray[currentRoll] == 0){
+						QuestionManager.GetComponent<QuestionManager>().showText("HARD QUESTION",true);
 						QuestionManager.GetComponent<QuestionManager>().showQuestion(0);
 					}
 					if(DiceArray[currentRoll] == -10){
@@ -161,6 +159,9 @@ public class Dice : MonoBehaviour {
 			CurrentTurn += 1;
 		}
 		Active = true;
+		QuestionPanel.SetActive(false);
+	}
+	public void hideQuestionPanel(){
 		QuestionPanel.SetActive(false);
 	}
 	public void nextStealTurn(){

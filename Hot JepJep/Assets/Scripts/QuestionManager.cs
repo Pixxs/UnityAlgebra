@@ -15,6 +15,8 @@ public class QuestionManager : MonoBehaviour {
 	public GameObject Scoreboard;
 	public GameObject QuestionText;
 	public GameObject StatusText;
+	public GameObject StealMenu;
+	public GameObject StealSlider;
 	public GameObject[] AnswerChoices;
 	public Question[] EasyQuestionList;
 	public Question[] MediumQuestionList;
@@ -44,17 +46,13 @@ public class QuestionManager : MonoBehaviour {
 			QuestionText.GetComponent<Text>().text = HardQuestionList[QuestionNumber].QuestionText;
 			showAnswerChoices(HardQuestionList[QuestionNumber]);
 		}
-		if(point == -500){
-			int QuestionNumber = Random.Range(0,EasyQuestionList.Length);
-			QuestionText.GetComponent<Text>().text = HardQuestionList[QuestionNumber].QuestionText;
-			showAnswerChoices(HardQuestionList[QuestionNumber]);
-		}
 		if(point == 250){
 			int QuestionNumber = Random.Range(0,MediumQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = MediumQuestionList[QuestionNumber].QuestionText;
 			showAnswerChoices(MediumQuestionList[QuestionNumber]);
 		}
 		if(point == -250){
+			Debug.Log("h");
 			int QuestionNumber = Random.Range(0,MediumQuestionList.Length);
 			QuestionText.GetComponent<Text>().text = MediumQuestionList[QuestionNumber].QuestionText;
 			showAnswerChoices(MediumQuestionList[QuestionNumber]);
@@ -120,17 +118,32 @@ public class QuestionManager : MonoBehaviour {
 	}
 
 	public void checkAnswer(){
+		CorrectSound.SetActive(false);
+		WrongSound.SetActive(false);
 		if(EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<Text>().text == CorrectAnswerString){
 			showText("Correct",false);
 			if(Try == 2){
 				CorrectSound.SetActive(true);
-				Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]/2);
+				if(Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]>0){
+					Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]/2);
+					Dice.GetComponent<Dice>().nextTurn();
+				}
+				else{
+					Dice.GetComponent<Dice>().hideQuestionPanel();
+					StealMenu.SetActive(true);
+				}
 			}
 			else{
 				CorrectSound.SetActive(true);
-				Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]);
+				if(Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]>0){
+					Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]);
+					Dice.GetComponent<Dice>().nextTurn();
+				}
+				else{
+					Dice.GetComponent<Dice>().hideQuestionPanel();
+					StealMenu.SetActive(true);
+				}
 			}
-			Dice.GetComponent<Dice>().nextTurn();
 		}
 		else{
 			showText("Incorrect",true);
@@ -144,6 +157,21 @@ public class QuestionManager : MonoBehaviour {
 				Try = 1;
 				Dice.GetComponent<Dice>().nextTurn();
 			}
+		}
+	}
+
+	public void stealPoints(){
+		if(Try == 2){
+			Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] -= (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]/2);
+			Scoreboard.GetComponent<Scoreboard>().Scores[(int)StealSlider.GetComponent<Slider>().value-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]/2);
+			Dice.GetComponent<Dice>().nextTurn();
+			StealMenu.SetActive(false);
+		}
+		else{
+			Scoreboard.GetComponent<Scoreboard>().Scores[Dice.GetComponent<Dice>().CurrentTurn-1] -= (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]);
+			Scoreboard.GetComponent<Scoreboard>().Scores[(int)StealSlider.GetComponent<Slider>().value-1] += (Dice.GetComponent<Dice>().DiceStuff[Dice.GetComponent<Dice>().finalRoll]);
+			Dice.GetComponent<Dice>().nextTurn();
+			StealMenu.SetActive(false);
 		}
 	}
 }
