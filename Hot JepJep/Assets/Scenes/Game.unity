@@ -3797,7 +3797,7 @@ MonoBehaviour:
   DiceText: {fileID: 152470848}
   CurrentTurn: 1
   Scoreboard: {fileID: 589047254}
-  CurrentTernObject: {fileID: 91616848}
+  CurrentTernObject: {fileID: 1039224598}
   QuestionManager: {fileID: 1739821216}
   QuestionPanel: {fileID: 1091253995}
   Active: 1
@@ -4035,8 +4035,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.57758, y: -598}
-  m_SizeDelta: {x: 1093.4, y: 100}
+  m_AnchoredPosition: {x: 132.9, y: -629.2}
+  m_SizeDelta: {x: 1096.8, y: 164.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1589703319
 Animator:
@@ -4651,6 +4651,87 @@ MonoBehaviour:
     - None of the above
     - Not a function
     AnswerChoicesImages: []
+  - QuestionText: If a=5 there is a...
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: Vertical stretch of 5
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - Vertical Compression of 5
+    - Vertical stretch of 1/5
+    - Vertical Compression of 5
+    AnswerChoicesImages: []
+  - QuestionText: "If a=\u2153, there is a..."
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: "Vertical Compression of \u2153"
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - "Vertical stretch of \u2153"
+    - Vertical stretch of 3
+    - Vertical Compression of 3
+    AnswerChoicesImages: []
+  - QuestionText: "What is the vertex of y=-2(x+5)\xB2-3 ?"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (-5,-3)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (5,-3)
+    - (-10,-3)
+    - (5,3)
+    AnswerChoicesImages: []
+  - QuestionText: "What is the vertex of y=(x-2)\xB2+10"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (2,10)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (-2,10)
+    - (2,-10)
+    - (4,10)
+    AnswerChoicesImages: []
+  - QuestionText: "What is the axis of symmetry of y=(x-7)\xB2-2"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: x=7
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - x=-7
+    - x=-2
+    - x=49
+    AnswerChoicesImages: []
+  - QuestionText: "What is the axis of symmetry of y=-3(x+4)\xB2-10"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: x=-4
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - x=-12
+    - x=-10
+    - x=3
+    AnswerChoicesImages: []
+  - QuestionText: "What is the vertex of y=-7(x-7)\xB2+20"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (7,20)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (-7,20)
+    - (20,7)
+    - (20,-7)
+    AnswerChoicesImages: []
+  - QuestionText: "What is the vertex of y=-(x+2)\xB2+4"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (-2,4)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (2,4)
+    - (4,-2)
+    - (4,4)
+    AnswerChoicesImages: []
+  - QuestionText: "What is the vertex of y=(x+2)\xB2-4"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (-2,-4)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (4,-4)
+    - (2,-4)
+    - (-2,4)
+    AnswerChoicesImages: []
   MediumQuestionList:
   - QuestionText: "Change y=x\xB2+2x+1 to vertex form"
     QuestionImage: {fileID: 0}
@@ -4688,6 +4769,60 @@ MonoBehaviour:
     - "y=(x-8)\xB2+64"
     - "y=(x-16)\xB2-64"
     AnswerChoicesImages: []
+  - QuestionText: "Change y=5(x+2)\xB2-9 to standard form"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: "y=5x\xB2+20x+11"
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - "y=5x\xB2+4x-9"
+    - "y=5x\xB2+20x-9"
+    - "y=5x\xB2+4x+11"
+    AnswerChoicesImages: []
+  - QuestionText: Find the regression of the table 1
+    QuestionImage: {fileID: 21300000, guid: 223de16f105ef62478b933637b2365bf, type: 3}
+    CorrectAnswer: "y=0.031x\xB2+0.672x+5.054"
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - y=-0.043x+3.039
+    - y=0.031x+5.054
+    - "y=y=0.043x\xB2+0.157x+5.054"
+    AnswerChoicesImages: []
+  - QuestionText: An object is launched into the air 1
+    QuestionImage: {fileID: 21300000, guid: 72df9fb219cf9534e892658ed737553e, type: 3}
+    CorrectAnswer: 72ft
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - 192ft
+    - 98ft
+    - 65ft
+    AnswerChoicesImages: []
+  - QuestionText: "Find the vertex of y=-6x\xB2+36-48"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (3,6)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (6,-3)
+    - (18,-6)
+    - (2,3)
+    AnswerChoicesImages: []
+  - QuestionText: "Find the verrtex of 5x\xB2+10x+25"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (-1,20)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (5,25)
+    - (-5,20)
+    - (4,5)
+    AnswerChoicesImages: []
+  - QuestionText: "Find the vertex of y=4x\xB2+8x+4"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (-1,0)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (0,1)
+    - (4,2)
+    - (-2,2)
+    AnswerChoicesImages: []
   HardQuestionList:
   - QuestionText: "Change y=2x\xB2-24x+59 to vertex form"
     QuestionImage: {fileID: 0}
@@ -4706,6 +4841,96 @@ MonoBehaviour:
     - "y=3x\xB2+30x+96"
     - "y=3x\xB2-30x+25"
     - "y=3x\xB2-25x-63"
+    AnswerChoicesImages: []
+  - QuestionText: "Change y=8x\xB2-16x+27 to vertex form"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: "y=8(x+1)\xB2+19"
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - "y=8(x-1)\xB2+19"
+    - "y=8(x-4)\xB2-19"
+    - "y=-8(x+4)\xB2+19"
+    AnswerChoicesImages: []
+  - QuestionText: "Change y=2x\xB2+36x+170 to vertex form"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: "y=2(x+9)\xB2+8"
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - "y=2(x-9)\xB2+8"
+    - "y=2(x+6)\xB2-8"
+    - "y=2(x-6)\xB2+8"
+    AnswerChoicesImages: []
+  - QuestionText: "Identify the axis of symmetry of 2x\xB2+36x+170"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: x=-9
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - x=36
+    - x=18
+    - x=6
+    AnswerChoicesImages: []
+  - QuestionText: "Identify the axis of symmetry of 8x\xB2-16x+27"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: x=1
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - x=-16
+    - x=-2
+    - x=19
+    AnswerChoicesImages: []
+  - QuestionText: "Identify the axis of symmetry of 4x\xB2+8x+8"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: x=-1
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - x=4
+    - x=8
+    - x=-2
+    AnswerChoicesImages: []
+  - QuestionText: "Identify the axis of symmetry of 2x\xB2-8x+4"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: x=2
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - x=-4
+    - x=-8
+    - x=4
+    AnswerChoicesImages: []
+  - QuestionText: "Identify the vertex of 2x\xB2-8x+4"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (2,-4)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (-2,4)
+    - (8,4)
+    - (2,-8)
+    AnswerChoicesImages: []
+  - QuestionText: "Identify the vertex of 4x\xB2-8x+4"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (1,0)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (4,4)
+    - (-2,4)
+    - (-8,2)
+    AnswerChoicesImages: []
+  - QuestionText: "Identify the vertex of 8x\xB2-16x+27"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (1,19)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (-2,27)
+    - (8,19)
+    - (4,27)
+    AnswerChoicesImages: []
+  - QuestionText: "Identify the vertex of 2x\xB2+36x+170"
+    QuestionImage: {fileID: 0}
+    CorrectAnswer: (-9,8)
+    CorrectAnswerImage: {fileID: 0}
+    AnswerChoices:
+    - (18,170)
+    - (8,-3)
+    - (-3,8)
     AnswerChoicesImages: []
   UltimateQuestionList:
   - QuestionText: "Change y=-\u2153x\xB2+18x-17 to vertex form"

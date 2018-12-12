@@ -30,19 +30,19 @@ public class Dice : MonoBehaviour {
 	void Update () {
 		//383.9 ; 108.8 265 428 586.4 746.4
 		if (CurrentTurn == 1){
-			CurrentTernObject.transform.position = new Vector3(108.8f,383.9f,0f);
+			CurrentTernObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-320,0.0f);
 		}
 		if (CurrentTurn == 2){
-			CurrentTernObject.transform.position = new Vector3(265f,383.9f,0f);
+			CurrentTernObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-160f,0.0f);
 		}
 		if (CurrentTurn == 3){
-			CurrentTernObject.transform.position = new Vector3(428f,383.9f,0f);
+			CurrentTernObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f,0.0f);
 		}
 		if (CurrentTurn == 4){
-			CurrentTernObject.transform.position = new Vector3(586.4f,383.9f,0f);
+			CurrentTernObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(160f,0.0f);
 		}
 		if (CurrentTurn == 5){
-			CurrentTernObject.transform.position = new Vector3(746.4f,383.9f,0f);
+			CurrentTernObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(320f,0.0f);
 		}
 
 
